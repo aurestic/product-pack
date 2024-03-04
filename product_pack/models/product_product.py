@@ -90,7 +90,7 @@ class ProductProduct(models.Model):
         super(ProductProduct, no_packs)._compute_product_lst_price()
         to_uom = None
         if 'uom' in self._context:
-            to_uom = self.env['uom.uom'].browse([self._context['uom']])
+            to_uom = self.env['product.uom'].browse([self._context['uom']])
         for product in packs:
             list_price = product.price_compute('list_price').get(product.id)
             if to_uom:
